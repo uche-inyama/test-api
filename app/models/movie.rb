@@ -4,4 +4,6 @@ class Movie < ApplicationRecord
   validates :purchased, presence: true
   validates :price, presence: true
   validates :video_quality, presence: true
+
+  scope :all_movies, -> { Movie.order(created_at: :desc) }
 end

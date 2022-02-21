@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_02_21_104249) do
   create_table "episodes", force: :cascade do |t|
     t.string "title"
     t.string "plot"
-    t.string "total_episode"
+    t.string "episode_number"
     t.bigint "season_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
