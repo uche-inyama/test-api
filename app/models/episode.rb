@@ -5,4 +5,5 @@ class Episode < ApplicationRecord
   validates :plot, presence: true
   validates :episode_number, presence: true
   validates :season_id, presence: true
+
 end

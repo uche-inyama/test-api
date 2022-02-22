@@ -7,4 +7,6 @@ class Season < ApplicationRecord
   validates :purchased, presence: true
   validates :price, presence: true
   validates :video_quality, presence: true
+
+  scope :season_episodes, -> { self.order(created_at: :desc).includes(:episodes) }
 end
