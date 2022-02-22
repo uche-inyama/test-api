@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_21_104249) do
+ActiveRecord::Schema.define(version: 2022_02_22_102156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 2022_02_21_104249) do
     t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.time "validity", default: "2000-01-01 10:18:34"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_libraries_on_user_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -61,4 +64,5 @@ ActiveRecord::Schema.define(version: 2022_02_21_104249) do
   end
 
   add_foreign_key "episodes", "seasons"
+  add_foreign_key "libraries", "users"
 end
