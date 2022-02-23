@@ -20,7 +20,7 @@ class Season < ApplicationRecord
       UNION
       SELECT *
       FROM seasons
-      ORDER BY created_at
+      ORDER BY created_at DESC
     ) query_row
     SQL
     self.connection.select_value query
