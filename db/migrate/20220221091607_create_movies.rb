@@ -3,8 +3,9 @@ class CreateMovies < ActiveRecord::Migration[6.1]
     create_table :movies do |t|
       t.string :title
       t.string :plot
+      t.integer :number, :default => 0
       t.boolean :purchased
-      t.integer :price
+      t.decimal :price
       t.string :video_quality
 
       t.timestamps

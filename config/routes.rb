@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         resources :libraries
       end 
       resources :movies
+      get '/movies_seasons', to: "seasons#movies_seasons"
     end
   end
 end

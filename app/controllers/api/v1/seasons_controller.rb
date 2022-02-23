@@ -24,6 +24,10 @@ class Api::V1::SeasonsController < ApplicationController
     end
   end
 
+  def movies_seasons
+    render json: Season.index_json
+  end
+
   def destroy
     @season.destroy
 

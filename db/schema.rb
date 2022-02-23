@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_22_102156) do
+ActiveRecord::Schema.define(version: 2022_02_23_110530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,8 +38,9 @@ ActiveRecord::Schema.define(version: 2022_02_22_102156) do
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.string "plot"
+    t.integer "number", default: 0
     t.boolean "purchased"
-    t.integer "price"
+    t.decimal "price"
     t.string "video_quality"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -48,9 +49,9 @@ ActiveRecord::Schema.define(version: 2022_02_22_102156) do
   create_table "seasons", force: :cascade do |t|
     t.string "title"
     t.string "plot"
-    t.string "number"
+    t.integer "number"
     t.boolean "purchased"
-    t.string "price"
+    t.decimal "price"
     t.string "video_quality"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
