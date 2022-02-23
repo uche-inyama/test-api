@@ -5,8 +5,10 @@ Rails.application.routes.draw do
       resources :seasons do
         resources :episodes
       end
+      resources :users do
+        resources :libraries
+      end 
       resources :movies
-      resources :users
     end
   end
 end

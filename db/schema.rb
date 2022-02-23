@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2022_02_22_102156) do
     t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.time "validity", default: "2000-01-01 10:18:34"
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_libraries_on_user_id"
   end
