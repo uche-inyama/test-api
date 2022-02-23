@@ -1,5 +1,5 @@
 class Season < ApplicationRecord
-  has_many :episodes, -> { order(:episode_number) }, dependent: :destroy
+  has_many :episodes, -> { order(episode_number: :desc) }, dependent: :destroy
 
   validates :title, presence: true
   validates :plot, presence: true
@@ -8,7 +8,7 @@ class Season < ApplicationRecord
   validates :price, presence: true
   validates :video_quality, presence: true
 
-  scope :season_episodes, -> { self.order(created_at: :desc).includes(:episodes) }
+  scope :season_episodes, -> { self.order(created_at: :desc) }
 
   def self.index_json
     query = <<-SQL

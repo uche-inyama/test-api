@@ -1,13 +1,12 @@
 module Api
   module V1
     class MoviesController < ApplicationController
-
       before_action :set_movie, only: [:update, :destroy]
 
       def index
-        movies = Movies.all_movies
+        movies = Movie.all_movies
 
-        render json: Movies, status: :ok
+        render json: movies, status: :ok
       end
 
       def create

@@ -34,7 +34,7 @@ class Api::V1::LibrariesController < ApplicationController
   private
 
   def library_params
-    params.permit(:title, :content, :status, :user_id)
+    params.require(:library).permit(:title, :content, :status, :user_id)
   end
 
   def set_library
