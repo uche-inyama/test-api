@@ -7,4 +7,3 @@ RSpec.describe Library, type: :model do
   it { validate_presence_of(:status) }
   it { validate_presence_of(:user_id) }
 end
-
