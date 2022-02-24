@@ -1,9 +1,10 @@
 FactoryBot.define do
   factory :movie do
-    title, { "MyString" }
-    plot, { "MyString" }
-    purchased { false }
-    price { 1 }
-    video_quality { "MyString" }
+    title { Faker::Movie.title }
+    plot { Faker::Movie.quote}
+    number { 0 }
+    purchased { true }
+    price { 2.33 }
+    video_quality { "HD" }
   end
 end

@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :season do
-    title { "MyString" }
-    plot { "MyString" }
-    number { "MyString" }
-    purchased { false }
-    price { "MyString" }
-    video_quality { "MyString" }
+    title { Faker::Movie.title }
+    plot { Faker::Movie.quote}
+    number { Faker::Number.number(digits: 1) }
+    purchased { true }
+    price { 2.33 }
+    video_quality { "HD" }
   end
 end
