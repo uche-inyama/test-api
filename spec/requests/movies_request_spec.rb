@@ -7,7 +7,6 @@ RSpec.describe "Movies", type: :request do
       title: "Avengers",
       plot: "End Game",
       number: 0, 
-      purchased: true,
       price: 2.33,
       video_quality: "HD"
     }
@@ -18,7 +17,6 @@ RSpec.describe "Movies", type: :request do
       title: "",
       plot: "",
       number: nil,
-      purchased: false,
       price: nil,
       video_quality: ""
     }

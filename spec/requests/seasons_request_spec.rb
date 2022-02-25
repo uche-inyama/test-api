@@ -10,7 +10,6 @@ RSpec.describe "Seasons", type: :request do
       title: "House of Cards",
       plot: "Amercia's politics",
       number: 20,
-      purchased: true,
       price: 2.33,
       video_quality: "HD"
     }
@@ -21,7 +20,6 @@ RSpec.describe "Seasons", type: :request do
       title: "",
       plot: "",
       number: nil,
-      purchased: false,
       price: nil,
       video_quality: ""
     }
