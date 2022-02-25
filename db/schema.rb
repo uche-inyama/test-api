@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_23_110530) do
+ActiveRecord::Schema.define(version: 2022_02_25_082252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_02_23_110530) do
   create_table "episodes", force: :cascade do |t|
     t.string "title"
     t.string "plot"
-    t.string "episode_number"
+    t.integer "episode_number"
     t.bigint "season_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_02_23_110530) do
   create_table "libraries", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.boolean "status"
+    t.string "status", default: "inactive"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2022_02_23_110530) do
     t.string "title"
     t.string "plot"
     t.integer "number", default: 0
-    t.boolean "purchased"
     t.decimal "price"
     t.string "video_quality"
     t.datetime "created_at", precision: 6, null: false
@@ -50,7 +49,6 @@ ActiveRecord::Schema.define(version: 2022_02_23_110530) do
     t.string "title"
     t.string "plot"
     t.integer "number"
-    t.boolean "purchased"
     t.decimal "price"
     t.string "video_quality"
     t.datetime "created_at", precision: 6, null: false

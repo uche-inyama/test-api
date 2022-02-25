@@ -33,7 +33,7 @@ class Api::V1::MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :plot, :purchased, :price, :video_quality)
+    params.require(:movie).permit(:title, :plot, :price, :video_quality)
   end
 
   def set_movie

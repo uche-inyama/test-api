@@ -37,7 +37,7 @@ class Api::V1::SeasonsController < ApplicationController
   private
 
   def season_params
-    params.require(:season).permit(:title, :plot, :number, :purchased, :price, :video_quality)
+    params.require(:season).permit(:title, :plot, :number, :price, :video_quality)
   end
   
   def set_season

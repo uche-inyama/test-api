@@ -1,6 +1,6 @@
 class Library < ApplicationRecord
   belongs_to :user
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
   validates :content, presence: true
   validates :status, presence: true
   validates :user_id, presence: true

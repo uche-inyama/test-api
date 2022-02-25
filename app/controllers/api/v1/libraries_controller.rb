@@ -13,7 +13,7 @@ class Api::V1::LibrariesController < ApplicationController
     if @library.save
       render json: @library, status: :created
     else
-      render json: @library.errors, status: :unprocessable_entity
+      render json: @library.errors.full_messages[0], status: :unprocessable_entity
     end
   end
 
@@ -34,7 +34,7 @@ class Api::V1::LibrariesController < ApplicationController
   private
 
   def library_params
-    params.require(:library).permit(:title, :content, :status, :user_id)
+    params.require(:library).permit(:title, :content, :status, :user_id, :content_id)
   end
 
   def set_library
