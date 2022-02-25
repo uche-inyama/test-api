@@ -1,10 +1,10 @@
-class RegistrationsController < ApplicationController
+class Api::V1::RegistrationsController < ApplicationController
+
   before_action :set_user, only: [:destroy]
 
   def create
     @user = User.create(user_params)
     if @user.save
-      session[:user_id] = @user.id
       render json: @user, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
