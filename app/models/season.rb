@@ -24,5 +24,4 @@ class Season < ApplicationRecord
     SQL
     self.connection.select_value query
   end
-  
 end

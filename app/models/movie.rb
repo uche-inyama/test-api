@@ -6,5 +6,4 @@ class Movie < ApplicationRecord
   validates :video_quality, presence: true
 
   scope :all_movies, -> { Movie.order(created_at: :desc) }
-
 end
