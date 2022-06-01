@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       end 
       resources :movies
       get '/movies_seasons', to: "seasons#movies_seasons"
+      post 'authenticate', to: 'authentication#create'
     end
   end
 end
