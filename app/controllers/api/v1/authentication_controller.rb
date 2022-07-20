@@ -1,7 +1,7 @@
 module Api
   module V1
     class AuthenticationController < ApplicationController
-      skip_before_action :authenticate_user, only: [:create]
+      # skip_before_action :authenticate_user, only: [:create]
       class AuthenticationError < StandardError; end
 
       rescue_from ActionController::ParameterMissing, with: :parameter_missing
