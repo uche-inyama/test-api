@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
   before_action :set_user, only: [:destroy]
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(email: params[:email], password: params[:password])
     if @user.save
       render json: @user, status: :created
     else
@@ -19,7 +19,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :password)
   end
 
   def set_user
