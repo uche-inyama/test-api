@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Token
-  # before_action :authenticate_user
 
   private
 
